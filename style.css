@@ -1,0 +1,3402 @@
+
+/* GENERAL STYLING */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f8fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* NAVIGATION BAR */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #163a4d;
+    color: white;
+}
+
+.navbar h2 {
+    margin: 0;
+}
+
+.links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+}
+
+.links a:hover {
+    color: #8ed1e5;
+}
+
+/* HOME SECTION */
+
+.home h1 {
+    font-size: 65px;
+    font-weight: 700;
+    line-height: 1.15;
+
+    margin-bottom: 25px;
+
+    color: white;
+.hidd
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.home p {
+    font-size: 18px;
+    line-height: 1.8;
+
+    max-width: 700px;
+    margin: 0 auto 30px;
+
+    color: white;
+}
+
+.button {
+    display: inline-block;
+    background-color: white;
+    color: #163a4d;
+    padding: 12px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-top: 15px;
+}
+
+.button:hover {
+    background-color: #dceef3;
+}
+
+/* INTRODUCTION */
+.intro {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.intro h2 {
+    font-size: 30px;
+    color: #163a4d;
+}
+
+/* EXPLORE SECTION */
+.explore {
+    padding: 80px 8%;
+    text-align: center;
+    background-color: #F5F0E5;
+}
+
+.explore h2 {
+    color: #315F49;
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+
+.explore > p {
+    color: #718277;
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+#search {
+    padding: 12px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin: 20px;
+}
+
+/* DESTINATION CARDS CONTAINER */
+.places {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+#hiddenPlaces {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* HIDDEN GEMS SECTION */
+en {
+    background-color: #8cbfd4;
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.hidden {
+    background-color: #F5F0E5;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+/* QUIZ SECTION */
+.quiz {
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.quiz h2 {
+    color: #163a4d;
+    font-size: 30px;
+}
+
+.quiz select {
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin: 15px;
+}
+
+button {
+    background-color: #168aad;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background-color: #126782;
+}
+
+#result {
+    margin-top: 20px;
+}
+
+
+.footer {
+    background-color: #163a4d;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+
+@media (max-width: 650px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .links a {
+        margin: 5px;
+    }
+
+    .home h1 {
+        font-size: 38px;
+    }
+
+    .explore {
+        padding: 30px 15px;
+    }
+}
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+#hiddenPlaces .card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Destination Details Page */
+
+#destinationPage {
+    width: 90%;
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 25px;
+    background: #f4f5f6;
+    border-radius: 20px;
+}
+
+.destination-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    max-width: 1250px;
+    margin: 60px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.05);
+    align-items: stretch;
+}
+
+.destination-info {
+    background: #f4f6f3;
+    padding: 45px;
+    border-radius: 25px;
+    position: relative;
+}
+
+.tag {
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: #668078;
+    margin-bottom: 30px;
+}
+
+.destination-info h1 {
+    font-size: 32px;
+    color: #183b35;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #555;
+}
+
+.about {
+    color: #777;
+    line-height: 1.7;
+    margin-top: 20px;
+}
+
+.destination-info hr {
+    border: none;
+    border-top: 1px dashed #ccc;
+    margin: 25px 0;
+}
+
+.destination-info h3 {
+    color: #183b35;
+    margin-bottom: 20px;
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 18px 0;
+    font-size: 14px;
+}
+
+.detail span:first-child {
+    font-weight: bold;
+    color: #333;
+}
+
+.detail span:last-child {
+    color: #777;
+    line-height: 1.5;
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 22px;
+    background: #183b35;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 13px;
+}
+
+.back-button:hover {
+    background: #315e52;
+}
+
+.destination-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 25px;
+    min-height: 550px;
+}
+
+.destination-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 550px;
+    object-fit: cover;
+    border-radius: 25px;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.destination-image:hover img {
+    transform: scale(1.04);
+}
+
+/* ===== CREATIVE HOME PAGE ===== */
+
+.home {
+    min-height: 680px;
+    height: 90vh;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0.5)),
+        url("images/background.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+/* ===== PREMIUM GLASS NAVBAR ===== */
+
+.home .navbar {
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 80%;
+    padding: 18px 35px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 50px;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    z-index: 10;
+}
+
+/* Logo */
+
+.home .navbar h2 {
+    color: white;
+    font-size: 25px;
+    letter-spacing: 1px;
+}
+
+/* Navigation links */
+
+.home .navbar .links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.home .navbar .links a {
+    color: white;
+    text-decoration: none;
+    margin: 0;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    transition: 0.3s ease;
+}
+
+/* Hover effect */
+
+.home .navbar .links a:hover {
+    color: #c5e8d9;
+    transform: translateY(-2px);
+}
+
+/* Main heading */
+
+.home-content {
+    text-align: center;
+    margin-top: 170px;
+    max-width: 700px;
+    padding: 20px;
+}
+
+.home-content h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.home-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* Explore button */
+
+.home-content .button {
+    display: inline-block;
+    padding: 12px 28px;
+    border: 1px solid white;
+    border-radius: 30px;
+    color: white;
+    background: transparent;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+.home-content .button:hover {
+    background: white;
+    color: #1b4740;
+}
+
+
+/* ===== CREATIVE INTRODUCTION SECTION ===== */
+
+.intro {
+    position: relative;
+    overflow: hidden;
+
+    width: 100%;
+    box-sizing: border-box;
+
+    background: #f5f0e5;
+    padding: 80px 30px;
+
+    text-align: center;
+    border-radius: 35px 35px 0 0;
+
+    margin-top: 0;
+}
+
+/* Main content */
+
+.intro-content {
+    position: relative;
+    z-index: 2;
+}
+
+.intro-label {
+    color: #a18b65;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    margin-bottom: 18px;
+}
+
+.intro h2 {
+    font-family: 'Playfair Display', serif;
+    color: #183b35;
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 22px;
+}
+
+/* Decorative divider */
+
+.intro-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 15px auto;
+}
+
+.intro-divider span {
+    width: 100px;
+    height: 1px;
+    background: #b9b29e;
+}
+
+.intro-divider b {
+    color: #a18b65;
+    font-size: 23px;
+}
+
+/* Description */
+
+.intro-description {
+    color: #61746b;
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 650px;
+    margin: 15px auto 0;
+}
+
+/* Botanical corner decorations */
+
+.intro::before,
+.intro::after {
+    content: "❧";
+    position: absolute;
+    color: #81927a;
+    opacity: 0.35;
+    font-size: 115px;
+    pointer-events: none;
+}
+
+.intro::before {
+    left: -15px;
+    bottom: -25px;
+    transform: rotate(-35deg);
+}
+
+.intro::after {
+    right: -15px;
+    bottom: -25px;
+    transform: scaleX(-1) rotate(-35deg);
+}
+
+/* ===== HOMEPAGE HERO SECTION ===== */
+
+.home {
+    min-height: 100vh;
+    height: 100vh;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-size: cover;
+    background-position: center;
+}
+
+/* Main content */
+
+.home-content {
+    text-align: center;
+
+    width: 90%;
+    max-width: 800px;
+
+    margin: 0 auto;
+    padding: 20px;
+
+    color: white;
+
+    position: relative;
+    z-index: 2;
+}
+/* Destination Sections */
+
+.explore {
+    padding: 70px 8%;
+    text-align: center;
+    background-color: #f5f8fa;
+}
+
+.explore h2 {
+    color: #163a4d;
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.explore > p {
+    color: #647985;
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+/* Search Bar */
+
+.explore input {
+    width: 350px;
+    max-width: 90%;
+    padding: 15px 22px;
+    border: 1px solid #D8DFD6;
+    border-radius: 30px;
+    background: #ffffff;
+    color: #315F49;
+    outline: none;
+    font-size: 15px;
+    margin-bottom: 40px;
+    transition: 0.3s ease;
+}
+
+.explore input:focus {
+    border-color: #315F49;
+    box-shadow: 0 0 0 4px rgba(49, 95, 73, 0.12);
+}
+
+/* Destination Cards */
+
+.explore .places {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px 5px 20px;
+    scroll-behavior: smooth;
+}
+
+.destination-card {
+    position: relative;
+    flex: 0 0 280px;
+    height: 350px;
+    border-radius: 20px;
+    overflow: hidden;
+    display: block;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.4s ease;
+}
+
+.destination-card:hover {
+    transform: translateY(-6px);
+}
+
+.destination-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Dark gradient */
+.card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.85),
+        rgba(0, 0, 0, 0.1) 75%
+    );
+    z-index: 1;
+}
+
+/* Curated destination badge */
+.destination-count {
+    background: rgba(245, 240, 229, 0.25);
+    color: white;
+    backdrop-filter: blur(10px);
+    padding: 8px 14px;
+    border-radius: 30px;
+    font-size: 12px;
+}
+
+/* Text at the bottom */
+.destination-content {
+    position: absolute;
+    bottom: 20px;
+    left: 18px;
+    right: 65px;
+    z-index: 2;
+    color: white;
+}
+
+.destination-content h3 {
+    color: white !important;
+    font-size: 22px;
+    margin-bottom: 8px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.destination-content p {
+    color: white;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Scrollbar */
+.explore .places::-webkit-scrollbar {
+    height: 6px;
+}
+
+.explore .places::-webkit-scrollbar-thumb {
+    background: #b5b5b5;
+    border-radius: 10px;
+}
+/* Destination themes and arrow */
+
+.destination-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.destination-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.destination-tags span {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(8px);
+    padding: 8px 14px;
+    border-radius: 30px;
+    font-size: 12px;
+    color: white;
+}
+
+/* Arrow button */
+   .card-arrow {
+    position: absolute;
+    bottom: 20px;
+    right: 18px;
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    color: white;
+
+    z-index: 3;
+    transition: background 0.3s ease;
+}
+
+
+.destination-card:hover .card-arrow {
+    background: rgba(255, 255, 255, 0.45);
+}
+
+ /* Travel Budget Card */
+
+.budget-card {
+    background: #D8DDEB;
+    color: #35445E;
+    padding: 30px;
+    border-radius: 25px;
+    margin-top: 25px;
+    border: 1px solid #C5CDDF;
+}
+
+.budget-card h2 {
+    font-size: 28px;
+    color: #35445E;
+    margin: 18px 0 10px;
+}
+
+.budget-card p {
+    color: #65728A;
+}
+
+.budget-heading {
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #53617C;
+}
+
+.budget-breakdown {
+    margin-top: 20px;
+    padding: 25px;
+    background: white;
+    border-radius: 18px;
+    border: 1px solid #e0e5df;
+}
+
+.budget-breakdown h3 {
+    margin-bottom: 20px;
+    color: #263b2b;
+    font-size: 22px;
+}
+
+.budget-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eeeeee;
+    gap: 15px;
+}
+
+.budget-item:last-child {
+    border-bottom: none;
+}
+
+.budget-item span:first-child {
+    color: #555;
+}
+
+.budget-item span:last-child {
+    font-weight: bold;
+    color: #526b52;
+    text-align: right;
+}
+.budget-label {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.budget-bar {
+    width: 100%;
+    height: 8px;
+    background: #e8ece7;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.budget-fill {
+    height: 100%;
+    border-radius: 20px;
+}
+
+.food-fill {
+    width: 65%;
+    background: #8ba888;
+}
+
+.transport-fill {
+    width: 45%;
+    background: #d4a373;
+}
+
+.activities-fill {
+    width: 75%;
+    background: #7895a5;
+}
+.favorite-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    background-color: white;
+    color: #526b52;
+    border: 1px solid #526b52;
+    border-radius: 50%;
+    font-size: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.favorite-btn:hover {
+    background-color: #526b52;
+    color: white;
+}
+
+.destination-info {
+    position: relative;
+}
+#favorites {
+    padding: 60px 8%;
+    background: #f4f5f2;
+}
+
+#favorites h2 {
+    font-size: 35px;
+    color: #263b2b;
+    margin-bottom: 10px;
+}
+
+#favorites > p {
+    color: #777;
+    margin-bottom: 30px;
+}
+
+#favoritePlaces {
+    margin-top: 25px;
+}
+#favorites {
+    min-height: 70vh;
+    padding: 60px 8%;
+    background: #f4f5f2;
+}
+
+#favorites h2 {
+    font-size: 35px;
+    color: #263b2b;
+    margin-bottom: 10px;
+}
+
+#favorites > p {
+    color: #777;
+    margin-bottom: 30px;
+}
+
+#favoritePlaces {
+    margin-top: 30px;
+}
+.clear-favorites {
+    padding: 12px 22px;
+    background: #ffffff;
+    color: #526b52;
+    border: 1px solid #526b52;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-bottom: 25px;
+    transition: 0.3s;
+}
+
+.clear-favorites:hover {
+    background: #526b52;
+    color: white;
+}
+.itinerary-section {
+    margin-top: 30px;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid #e0e5df;
+}
+
+.itinerary-section h3 {
+    color: #263b2b;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.itinerary-section p {
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.itinerary-section label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.itinerary-section select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+}
+
+.itinerary-section button {
+    width: 100%;
+    padding: 14px;
+    background: #526b52;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.itinerary-section button:hover {
+    background: #263b2b;
+}
+
+.itinerary-day {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f4f5f2;
+    border-radius: 15px;
+    border-left: 4px solid #526b52;
+}
+
+.itinerary-day h4 {
+    color: #263b2b;
+    margin-bottom: 15px;
+}
+
+.itinerary-day p {
+    margin: 10px 0;
+    color: #555;
+}
+/* Travel Checklist */
+
+.checklist-section {
+    margin: 40px auto;
+    padding: 30px;
+    max-width: 700px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.checklist-section h3 {
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+#checklistProgress {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #e5e5e5;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+#progressFill {
+    width: 0%;
+    height: 100%;
+    background: #4caf50;
+    border-radius: 20px;
+    transition: width 0.4s ease;
+}
+
+.checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.checklist label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    background: #f7f7f7;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.checklist label:hover {
+    background: #eef7ee;
+    transform: translateX(5px);
+}
+
+.checklist input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #4caf50;
+    cursor: pointer;
+}
+/* Budget Planner */
+
+.budget-planner {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.budget-planner h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.budget-planner > p {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.budget-input {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.budget-input label {
+    font-weight: 600;
+    color: #444;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.budget-input input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 15px;
+    box-sizing: border-box;
+    outline: none;
+    transition: 0.3s;
+}
+
+.budget-input input:focus {
+    border-color: #4caf50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.2);
+}
+
+.budget-planner button {
+    margin-top: 25px;
+    padding: 13px 25px;
+    background: #2d6a4f;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.budget-planner button:hover {
+    background: #1b4332;
+    transform: translateY(-2px);
+}
+
+.budget-summary {
+    margin-top: 25px;
+    padding: 25px;
+    background: #f4f8f4;
+    border-radius: 15px;
+    border-left: 5px solid #4caf50;
+}
+
+.budget-summary h4 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.budget-summary p {
+    margin: 12px 0;
+    font-size: 16px;
+}
+
+.budget-success {
+    color: #2d6a4f;
+    font-weight: bold;
+}
+
+.budget-warning {
+    color: #d62828;
+    font-weight: bold;
+}
+/* Interactive Travel Map */
+
+.map-section {
+    padding: 60px 8%;
+    text-align: center;
+}
+
+.map-section h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.map-section p {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+#travelMap {
+    height: 500px;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+/* Hidden Gems Cards */
+
+#hiddenPlaces {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin-top: 35px;
+    padding-bottom: 20px;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+
+.hidden-gem-card {
+    position: relative;
+    flex: 0 0 350px;
+    width: 350px;
+    height: 440px;
+    border-radius: 25px;
+    overflow: hidden;
+    background: #222;
+    scroll-snap-align: start;
+    transition: transform 0.4s ease;
+}
+
+.hidden-gem-card:hover {
+    transform: translateY(-8px);
+}
+
+.hidden-gem-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.hidden-gem-card:hover img {
+    transform: scale(1.08);
+}
+
+.hidden-gem-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.15),
+        transparent 30%,
+        rgba(0, 0, 0, 0.2) 50%,
+        rgba(0, 0, 0, 0.85)
+    );
+}
+
+.hidden-gem-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px;
+    box-sizing: border-box;
+    color: white;
+    z-index: 2;
+}
+
+.hidden-gem-label {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.hidden-gem-content h3 {
+    font-size: 27px;
+    color: white;
+    margin-bottom: 12px;
+}
+
+.hidden-gem-content p {
+    font-size: 15px;
+    color: white;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.hidden-gem-bottom {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hidden-gem-label {
+    background: rgba(245, 240, 229, 0.25);
+    color: white;
+    backdrop-filter: blur(10px);
+}
+
+.gem-category {
+    background: rgba(245, 240, 229, 0.25);
+    color: white;
+}
+
+.gem-arrow {
+    background: rgba(245, 240, 229, 0.25);
+    color: white;
+}
+
+.gem-arrow:hover {
+    background: #F5F0E5;
+    color: #315F49;
+}
+
+#hiddenPlaces::-webkit-scrollbar {
+    height: 8px;
+}
+
+#hiddenPlaces::-webkit-scrollbar-track {
+    background: #e0e0e0;
+    border-radius: 10px;
+}
+
+#hiddenPlaces::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+
+#hiddenPlaces::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}
+
+/* =====================================
+   WAYFINDER DESTINATION PAGE REDESIGN
+===================================== */
+
+#destinationPage {
+    padding: 40px 6%;
+    background: #f5f7f6;
+}
+
+/* Main layout */
+
+.destination-layout {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 50px;
+    align-items: start;
+    max-width: 1400px;
+    margin: auto;
+}
+
+/* Destination information */
+
+.destination-info {
+    background: #ffffff;
+    padding: 45px;
+    border-radius: 28px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+}
+
+/* Destination title */
+
+.destination-info h1 {
+    font-size: 58px;
+    font-weight: 800;
+    letter-spacing: -2px;
+    color: #173f35;
+    margin: 15px 0;
+}
+
+.destination-info .tag {
+    color: #77958a;
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.destination-info .subtitle {
+    font-size: 19px;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.destination-info .about {
+    font-size: 16px;
+    line-height: 1.9;
+    color: #555;
+}
+
+/* Section headings */
+
+.destination-info h3 {
+    color: #173f35;
+    font-size: 22px;
+    margin-top: 35px;
+    margin-bottom: 18px;
+}
+
+.destination-info hr {
+    border: none;
+    height: 1px;
+    background: #e8eeeb;
+    margin: 30px 0;
+}
+
+/* Destination Image */
+
+.destination-image {
+    position: sticky;
+    top: 30px;
+    height: 420px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 25px;
+}
+
+.destination-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 25px;
+}
+
+/* Favorite button */
+
+.favorite-btn {
+    float: right;
+    border: none;
+    background: #f1f6f3;
+    color: #2f725c;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.favorite-btn:hover {
+    background: #dcebe3;
+    transform: scale(1.1);
+}
+
+/* Trip details */
+
+.detail {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 18px 0;
+    border-bottom: 1px solid #edf0ee;
+}
+
+.detail span:first-child {
+    font-weight: 600;
+    color: #38584b;
+}
+
+.detail span:last-child {
+    text-align: right;
+    color: #666;
+}
+
+/* Weather card */
+
+.weather-card {
+    background: linear-gradient(135deg, #e3f1eb, #f3f8f5);
+    padding: 25px;
+    border-radius: 22px;
+    margin-top: 30px;
+    border: 1px solid #dcebe3;
+}
+
+.weather-card h3 {
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    color: #47715f;
+}
+
+.weather-main {
+    text-align: center;
+    padding: 15px 0;
+}
+
+.weather-icon {
+    font-size: 55px;
+}
+
+.weather-main h2 {
+    font-size: 48px;
+    color: #173f35;
+    margin: 5px 0;
+}
+
+.weather-main p {
+    color: #557466;
+}
+
+.weather-details {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+    background: white;
+    border-radius: 15px;
+    padding: 12px;
+    margin-top: 15px;
+}
+
+.weather-details p {
+    margin: 5px;
+    color: #526b60;
+}
+
+.weather-update {
+    text-align: center;
+    font-size: 12px;
+    color: #799187;
+    margin-bottom: 0;
+}
+
+/* Budget card */
+
+.budget-card {
+    background: linear-gradient(135deg, #173f35, #42745f);
+    color: white;
+    padding: 30px;
+    border-radius: 24px;
+    margin-top: 30px;
+}
+
+.budget-card h2 {
+    font-size: 30px;
+    margin: 20px 0 10px;
+}
+
+.budget-card p {
+    color: #d7e7de;
+}
+
+/* Budget breakdown */
+
+.budget-breakdown {
+    background: #f8faf9;
+    padding: 25px;
+    border-radius: 22px;
+    margin-top: 25px;
+}
+
+.budget-item {
+    margin: 25px 0;
+}
+
+.budget-label {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 10px;
+    color: #52665d;
+}
+
+.budget-bar {
+    height: 9px;
+    background: #e4ebe7;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.budget-fill {
+    height: 100%;
+    border-radius: 20px;
+}
+
+.food-fill {
+    width: 65%;
+    background: #e6a86a;
+}
+
+.transport-fill {
+    width: 45%;
+    background: #76a6bc;
+}
+
+.activities-fill {
+    width: 55%;
+    background: #7ca58a;
+}
+
+/* Itinerary */
+
+.itinerary-section {
+    background: #f8faf9;
+    padding: 30px;
+    border-radius: 24px;
+    margin-top: 30px;
+}
+
+.itinerary-section select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #dce5df;
+    border-radius: 12px;
+    margin: 15px 0;
+    background: white;
+}
+
+.itinerary-section button,
+.budget-planner button,
+.back-button {
+    display: inline-block;
+    border: none;
+    background: #244f40;
+    color: white;
+    padding: 14px 22px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.itinerary-section button:hover,
+.budget-planner button:hover,
+.back-button:hover {
+    background: #38765d;
+    transform: translateY(-2px);
+}
+
+/* Itinerary day cards */
+
+.itinerary-day {
+    background: white;
+    padding: 22px;
+    border-radius: 16px;
+    margin-top: 18px;
+    border-left: 4px solid #5b9478;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+}
+
+/* Checklist */
+
+.checklist-section {
+    margin-top: 30px;
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+}
+
+.checklist {
+    display: grid;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.checklist label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #f7faf8;
+    padding: 15px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.checklist input {
+    accent-color: #42745f;
+    width: 18px;
+    height: 18px;
+}
+
+/* Checklist progress */
+
+.progress-bar {
+    height: 8px;
+    background: #e4ebe7;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+#progressFill {
+    height: 100%;
+    width: 0%;
+    background: #5b9478;
+    transition: width 0.4s ease;
+}
+
+/* Budget planner */
+
+.budget-planner {
+    background: white;
+    padding: 30px;
+    border-radius: 24px;
+    margin-top: 30px;
+    border: 1px solid #edf0ee;
+}
+
+.budget-input {
+    display: grid;
+    gap: 12px;
+    margin: 25px 0;
+}
+
+.budget-input label {
+    font-weight: 600;
+    color: #52665d;
+}
+
+.budget-input input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #dce5df;
+    border-radius: 12px;
+    outline: none;
+}
+
+.budget-input input:focus {
+    border-color: #5b9478;
+    box-shadow: 0 0 0 3px rgba(91, 148, 120, 0.1);
+}
+
+/* Budget result */
+
+.budget-summary {
+    background: #f2f8f4;
+    padding: 25px;
+    border-radius: 18px;
+    margin-top: 20px;
+}
+
+.budget-success {
+    color: #34744d;
+    font-weight: bold;
+}
+
+.budget-warning {
+    color: #c15d44;
+    font-weight: bold;
+}
+
+/* Rating section */
+
+.rating-section {
+    text-align: center;
+    background: #f8faf9;
+    padding: 30px;
+    border-radius: 24px;
+    margin-top: 30px;
+}
+
+.rating-stars button {
+    border: none;
+    background: transparent;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.rating-stars button:hover {
+    transform: scale(1.25);
+}
+
+/* Back button */
+
+.back-button {
+    margin-top: 35px;
+}
+
+/* Responsive design */
+
+@media (max-width: 1000px) {
+
+    .destination-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .destination-image {
+        position: relative;
+        top: 0;
+        height: 450px;
+        order: -1;
+    }
+
+    .destination-info {
+        padding: 30px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    #destinationPage {
+        padding: 20px 4%;
+    }
+
+    .destination-info {
+        padding: 22px;
+        border-radius: 20px;
+    }
+
+    .destination-info h1 {
+        font-size: 40px;
+    }
+
+    .destination-image {
+        height: 300px;
+        border-radius: 20px;
+    }
+
+    .detail {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .detail span:last-child {
+        text-align: left;
+    }
+
+    .budget-label {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+}
+
+/* =====================================
+   WAYFINDER - DESTINATION PAGE DESIGN
+===================================== */
+
+#destinationPage {
+    background: #f3f1e9;
+    padding: 45px 5%;
+}
+
+/* Main Layout */
+
+.destination-layout {
+    max-width: 1250px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 30px;
+
+    align-items: start;
+}
+
+/* Destination Information */
+
+.destination-info {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 28px;
+
+    box-shadow: 0 10px 35px rgba(30, 60, 45, 0.06);
+}
+
+/* Destination Heading */
+
+.destination-info h1 {
+    font-size: 48px;
+    letter-spacing: -1.5px;
+    color: #214c3c;
+    margin: 15px 0;
+}
+
+.destination-info .tag {
+    color: #8b9c8d;
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.destination-info .subtitle {
+    font-size: 18px;
+    color: #78857c;
+    margin-bottom: 20px;
+}
+
+.destination-info .about {
+    color: #65736a;
+    line-height: 1.8;
+}
+
+/* Destination Image */
+
+.destination-image {
+    position: sticky;
+    top: 100px;
+
+    width: 100%;
+    height: 380px;
+
+    overflow: hidden;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.destination-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 25px;
+    transition: transform 0.5s ease;
+}
+
+.destination-image:hover img {
+    transform: scale(1.05);
+}
+
+/* Favorite Button */
+
+.favorite-btn {
+    background: #f0f5f1;
+    color: #376b52;
+
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+    font-size: 24px;
+
+    float: right;
+    transition: 0.3s;
+}
+
+.favorite-btn:hover {
+    background: #dcebe2;
+    color: #214c3c;
+    transform: scale(1.1);
+}
+
+/* Trip Details */
+
+.detail {
+    padding: 18px 0;
+    border-bottom: 1px solid #edf0ed;
+}
+
+.detail span:first-child {
+    color: #365747;
+    font-weight: 600;
+}
+
+.detail span:last-child {
+    color: #7a827d;
+}
+
+/* Weather Card */
+
+.weather-card {
+    background: linear-gradient(135deg, #e3eee8, #f4f8f5);
+    padding: 25px;
+    border-radius: 22px;
+    margin-top: 30px;
+    border: 1px solid #dce8df;
+}
+
+.weather-card h3 {
+    color: #426b56;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-top: 0;
+}
+
+.weather-main h2 {
+    color: #244d3c;
+    font-size: 45px;
+}
+
+.weather-icon {
+    font-size: 50px;
+}
+
+.weather-details {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+/* =====================================
+   TRAVEL BUDGET CARD
+===================================== */
+
+.budget-card {
+    background: linear-gradient(135deg, #17483a, #39735b);
+
+    color: #ffffff;
+
+    padding: 30px;
+    border-radius: 25px;
+    margin-top: 30px;
+
+    border: 1px solid #d6c6a1;
+
+    box-shadow: 0 8px 25px rgba(23, 72, 58, 0.12);
+}
+
+.budget-heading {
+    color: #e5c991;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.budget-card h2 {
+    color: #ffffff !important;
+    font-size: 30px;
+    line-height: 1.4;
+    margin: 20px 0 12px;
+}
+
+.budget-card p {
+    color: #dcebe3;
+    font-size: 15px;
+}
+
+/* Budget Breakdown */
+
+.budget-breakdown {
+    background: #f7f5ee;
+    padding: 25px;
+    border-radius: 22px;
+    margin-top: 20px;
+}
+
+.budget-breakdown h3 {
+    color: #244d3c;
+}
+
+.budget-label {
+    color: #52685c;
+}
+
+.food-fill {
+    background: #c49b68;
+}
+
+.transport-fill {
+    background: #7b9ca6;
+}
+
+.activities-fill {
+    background: #77977c;
+}
+
+/* =====================================
+   ITINERARY
+===================================== */
+
+.itinerary-section {
+    background: #f7f5ee;
+    padding: 30px;
+    border-radius: 25px;
+    margin-top: 30px;
+}
+
+.itinerary-section h3 {
+    color: #244d3c;
+}
+
+.itinerary-section select {
+    background: #ffffff;
+    border: 1px solid #dce4dc;
+    border-radius: 12px;
+}
+
+.itinerary-section button {
+    background: #315f49;
+    border-radius: 12px;
+}
+
+.itinerary-section button:hover {
+    background: #214735;
+}
+
+.itinerary-day {
+    background: white;
+    border-left: 4px solid #78977d;
+    border-radius: 15px;
+}
+
+/* =====================================
+   CHECKLIST
+===================================== */
+
+.checklist-section {
+    background: #ffffff;
+    border-radius: 22px;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+.checklist-section h3 {
+    color: #244d3c;
+}
+
+.checklist label {
+    background: #f5f7f4;
+    border-radius: 12px;
+    padding: 15px;
+    transition: 0.3s;
+}
+
+.checklist label:hover {
+    background: #eaf1eb;
+}
+
+.checklist input {
+    accent-color: #47765a;
+}
+
+#progressFill {
+    background: #47765a;
+}
+
+/* =====================================
+   BUDGET PLANNER
+===================================== */
+
+.budget-planner {
+    background: #ffffff;
+    border-radius: 25px;
+    padding: 30px;
+    margin-top: 30px;
+    border: 1px solid #e8ece7;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+}
+
+.budget-planner h3 {
+    color: #244d3c;
+}
+
+.budget-planner button {
+    background: #315f49;
+    border-radius: 12px;
+}
+
+.budget-planner button:hover {
+    background: #214735;
+}
+
+.budget-summary {
+    background: #edf4ee;
+    border-left: 5px solid #47765a;
+    border-radius: 15px;
+}
+
+/* =====================================
+   RATING
+===================================== */
+
+.rating-section {
+    background: #f7f5ee;
+    border-radius: 25px;
+    padding: 30px;
+    margin-top: 30px;
+}
+
+.rating-section h3 {
+    color: #244d3c;
+}
+
+.rating-stars button {
+    color: #c49b68;
+    font-size: 30px;
+    background: transparent;
+}
+
+/* Back Button */
+
+.back-button {
+    background: #315f49;
+    border-radius: 12px;
+    padding: 14px 25px;
+}
+
+.back-button:hover {
+    background: #214735;
+}
+
+/* =====================================
+   RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 900px) {
+
+    .destination-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .destination-image {
+        position: relative;
+        top: 0;
+        height: 350px;
+        order: -1;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    #destinationPage {
+        padding: 20px 4%;
+    }
+
+    .destination-info {
+        padding: 22px;
+    }
+
+    .destination-info h1 {
+        font-size: 38px;
+    }
+
+    .destination-image {
+        height: 280px;
+    }
+
+    .budget-card h2 {
+        font-size: 25px;
+    }
+
+    .budget-input {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* FINAL BUDGET CARD DESIGN */
+
+.budget-card {
+    background: linear-gradient(135deg, #1b493c, #42745f);
+    color: white;
+    padding: 35px;
+    border-radius: 28px;
+    margin-top: 30px;
+    border: 1px solid #d6c6a1;
+}
+
+.budget-card .budget-heading {
+    color: #d6c6a1;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.budget-card h2 {
+    color: #ffffff !important;
+    font-size: 32px;
+    line-height: 1.4;
+    margin: 20px 0;
+}
+
+.budget-card p {
+    color: #e0ebe5;
+    font-size: 16px;
+}
+/* =====================================
+   DESTINATION FINDER - REDESIGN
+===================================== */
+
+.quiz {
+    position: relative;
+    overflow: hidden;
+
+    padding: 90px 20px;
+    text-align: center;
+
+    background: #f3f1e9;
+}
+
+/* Decorative background circles */
+
+.quiz::before {
+    content: "";
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    background: #dce8dc;
+    border-radius: 50%;
+
+    top: -100px;
+    left: -100px;
+    opacity: 0.6;
+}
+
+.quiz::after {
+    content: "";
+    position: absolute;
+
+    width: 200px;
+    height: 200px;
+
+    background: #e7dcc8;
+    border-radius: 50%;
+
+    bottom: -80px;
+    right: -60px;
+    opacity: 0.5;
+}
+
+/* Main heading */
+
+.quiz h2 {
+    position: relative;
+    z-index: 2;
+
+    font-size: 42px;
+    color: #214c3c;
+
+    margin-bottom: 15px;
+}
+
+/* Subtitle */
+
+.quiz > p {
+    position: relative;
+    z-index: 2;
+
+    color: #718078;
+    font-size: 18px;
+
+    margin-bottom: 35px;
+}
+
+/* Search Card */
+
+.quiz select {
+    position: relative;
+    z-index: 2;
+
+    width: 250px;
+    padding: 16px 20px;
+
+    font-size: 16px;
+    color: #365747;
+
+    background: white;
+
+    border: 1px solid #d7e1d8;
+    border-radius: 15px;
+
+    outline: none;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.quiz select:hover {
+    border-color: #527c63;
+}
+
+.quiz select:focus {
+    border-color: #527c63;
+    box-shadow: 0 0 0 4px rgba(82, 124, 99, 0.12);
+}
+
+/* Buttons */
+
+.quiz button {
+    position: relative;
+    z-index: 2;
+
+    padding: 16px 30px;
+
+    margin: 10px 5px;
+
+    background: #315f49;
+    color: white;
+
+    border: none;
+    border-radius: 15px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+.quiz button:hover {
+    background: #214735;
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 20px rgba(33, 71, 53, 0.15);
+}
+
+/* Result */
+
+#result {
+    position: relative;
+    z-index: 2;
+
+    max-width: 650px;
+
+    margin: 35px auto 0;
+    padding: 25px 30px;
+
+    background: white;
+
+    border-radius: 20px;
+    border: 1px solid #e5ebe4;
+
+    color: #456251;
+    font-size: 18px;
+    line-height: 1.8;
+
+    box-shadow: 0 8px 25px rgba(30, 60, 45, 0.05);
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+
+    .quiz {
+        padding: 65px 20px;
+    }
+
+    .quiz h2 {
+        font-size: 30px;
+    }
+
+    .quiz select {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .quiz button {
+        width: 100%;
+        max-width: 300px;
+    }
+
+}
+.quiz-label {
+    position: relative;
+    z-index: 2;
+
+    font-size: 12px !important;
+    font-weight: bold;
+    letter-spacing: 4px;
+
+    color: #a18b65 !important;
+    margin-bottom: 18px !important;
+}
+/* =====================================
+   QUIZ DESTINATION CARDS
+===================================== */
+
+.quiz-results {
+    position: relative;
+    z-index: 2;
+    margin-top: 40px;
+}
+
+.quiz-result-heading {
+    color: #214c3c;
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.quiz-card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+/* Individual cards */
+
+.quiz-destination-card {
+    position: relative;
+
+    width: 280px;
+    height: 350px;
+
+    overflow: hidden;
+    border-radius: 22px;
+
+    text-decoration: none;
+    color: white;
+
+    box-shadow: 0 10px 25px rgba(30, 60, 45, 0.12);
+
+    transition: transform 0.4s ease,
+                box-shadow 0.4s ease;
+}
+
+.quiz-destination-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: 0 15px 30px rgba(30, 60, 45, 0.2);
+}
+
+/* Card Image */
+
+.quiz-destination-card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    position: absolute;
+    inset: 0;
+
+    transition: transform 0.5s ease;
+}
+
+.quiz-destination-card:hover img {
+    transform: scale(1.08);
+}
+
+/* Image Overlay */
+
+.quiz-card-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.85),
+        rgba(0, 0, 0, 0.1) 75%
+    );
+}
+
+/* Card Content */
+
+.quiz-card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    padding: 25px;
+
+    text-align: left;
+    color: white;
+}
+
+.quiz-card-content h3 {
+    color: white;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.quiz-card-content p {
+    color: white;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+.quiz-explore {
+    display: inline-block;
+
+    background: rgba(255, 255, 255, 0.2);
+
+    padding: 10px 16px;
+    border-radius: 30px;
+
+    color: white;
+    font-size: 13px;
+
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.quiz-destination-card:hover .quiz-explore {
+    background: white;
+    color: #214c3c;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .quiz-destination-card {
+        width: 100%;
+        max-width: 350px;
+    }
+
+}
+/* Hidden Gems Search Button */
+
+.hidden button {
+    background: #315F49;
+    color: white;
+    padding: 14px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.hidden button:hover {
+    background: #214735;
+    transform: translateY(-3px);
+}
+
+/* Hidden Gems Search Bar */
+
+.hidden input {
+    background: white;
+    border: 1px solid #D8DFD6;
+    border-radius: 30px;
+    padding: 14px 20px;
+    width: 300px;
+    font-size: 15px;
+    outline: none;
+}
+
+.hidden input:focus {
+    border-color: #315F49;
+    box-shadow: 0 0 0 3px rgba(49, 95, 73, 0.12);
+}
+
+/* FINAL EXPLORE SECTION COLOR OVERRIDE */
+
+.explore {
+    background-color: #F5F0E5 !important;
+}
+
+.explore h2 {
+    color: #315F49 !important;
+}
+
+.explore > p {
+    color: #718277 !important;
+}
+
+/* ===== DESTINATION CARD BUTTONS ===== */
+
+.destination-tags span {
+    background: rgba(255, 255, 255, 0.22) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 30px !important;
+
+    padding: 10px 18px !important;
+
+    color: white !important;
+    font-size: 13px !important;
+
+    transition: 0.3s ease;
+}
+
+.destination-tags span:hover {
+    background: rgba(255, 255, 255, 0.4) !important;
+    transform: translateY(-2px);
+}
+
+/* Arrow button */
+
+.card-arrow {
+    width: 45px !important;
+    height: 45px !important;
+
+    border-radius: 50% !important;
+
+    background: rgba(255, 255, 255, 0.25) !important;
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 24px !important;
+    color: white !important;
+
+    transition: 0.3s ease;
+}
+
+.destination-card:hover .card-arrow {
+    background: white !important;
+    color: #315F49 !important;
+    transform: translateX(4px);
+}
+
+/* Hidden Gem category buttons */
+.hidden-gem-bottom {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.gem-category {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 22px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.18);
+    color: white;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.gem-category:hover {
+    background: white;
+    color: #164e63;
+    transform: translateY(-3px);
+}
+
+/* Explore arrow */
+.gem-arrow {
+    margin-left: auto;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+    color: white;
+    font-size: 26px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.gem-arrow:hover {
+    background: white;
+    color: #164e63;
+    transform: translateX(5px);
+}
+/* =================================
+   DESTINATION PAGE - PREMIUM DESIGN
+================================= */
+
+#destinationPage {
+    background: #f4f5f0;
+    padding: 60px 5%;
+}
+
+/* Main layout */
+
+.destination-layout {
+    max-width: 1250px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 35px;
+    align-items: stretch;
+    background: #f0eee5;
+    padding: 35px;
+    border-radius: 35px;
+}
+
+/* Information section */
+
+.destination-info {
+    background: #ffffff;
+    padding: 55px 50px;
+    border-radius: 30px;
+    position: relative;
+    box-shadow: 0 15px 45px rgba(33, 77, 60, 0.06);
+}
+
+/* Featured label */
+
+.destination-info .tag {
+    color: #a28b69;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+/* Destination title */
+
+.destination-info h1 {
+    font-size: 64px;
+    font-weight: 800;
+    color: #214d3c;
+    margin: 20px 0;
+    letter-spacing: -2px;
+}
+
+/* Subtitle */
+
+.destination-info .subtitle {
+    font-size: 22px;
+    color: #758078;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+/* About destination */
+
+.destination-info .about {
+    font-size: 16px;
+    line-height: 2;
+    color: #5c685f;
+}
+
+/* Divider */
+
+.destination-info hr {
+    border: none;
+    height: 1px;
+    background: #e5e9e3;
+    margin: 35px 0;
+}
+
+/* Section headings */
+
+.destination-info h3 {
+    color: #214d3c;
+    font-size: 23px;
+    margin: 35px 0 20px;
+}
+
+/* Destination image */
+
+.destination-image {
+    position: relative;
+    min-height: 700px;
+    border-radius: 28px;
+    overflow: hidden;
+}
+
+.destination-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 700px;
+    object-fit: cover;
+    border-radius: 28px;
+    transition: transform 0.6s ease;
+}
+
+.destination-image:hover img {
+    transform: scale(1.04);
+}
+
+/* Favorite button */
+
+.favorite-btn {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    width: 55px;
+    height: 55px;
+    border: none;
+    border-radius: 50%;
+    background: #eef4ef;
+    color: #214d3c;
+    font-size: 26px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.favorite-btn:hover {
+    background: #214d3c;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Trip detail rows */
+
+.detail {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 22px;
+    margin: 15px 0;
+    background: #f5f7f3;
+    border-radius: 16px;
+    border-left: 4px solid #78947e;
+}
+
+.detail span:first-child {
+    color: #214d3c;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.detail span:last-child {
+    color: #68766c;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* Weather card */
+
+.weather-card {
+    background: linear-gradient(135deg, #214d3c, #426c54);
+    color: white;
+    padding: 30px;
+    border-radius: 24px;
+    margin: 30px 0;
+    box-shadow: 0 10px 25px rgba(33, 77, 60, 0.12);
+}
+
+.weather-card h3 {
+    color: white !important;
+    font-size: 14px !important;
+    letter-spacing: 2px;
+    margin: 0 0 20px !important;
+}
+
+.weather-card h2 {
+    font-size: 48px;
+    margin: 10px 0;
+}
+
+.weather-card p {
+    color: #e4eee6;
+}
+
+.weather-details {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.weather-update {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+/* Budget card */
+
+.budget-card {
+    background: #f3eee3;
+    padding: 30px;
+    border-radius: 24px;
+    margin: 30px 0;
+    border: 1px solid #e6ddce;
+}
+
+.budget-heading span {
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: #94744d;
+    font-weight: bold;
+}
+
+.budget-card h2 {
+    font-size: 32px;
+    color: #214d3c;
+    margin: 20px 0 10px;
+}
+
+.budget-card p {
+    color: #77786e;
+}
+
+/* Budget breakdown */
+
+.budget-breakdown {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 24px;
+    margin: 25px 0;
+    border: 1px solid #edf0eb;
+}
+
+.budget-breakdown h3 {
+    margin-top: 0;
+}
+
+.budget-item {
+    margin: 25px 0;
+}
+
+.budget-label {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    color: #526257;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.budget-bar {
+    height: 9px;
+    background: #edf1eb;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.budget-fill {
+    height: 100%;
+    border-radius: 20px;
+    background: #78947e;
+}
+
+.food-fill {
+    width: 65%;
+}
+
+.transport-fill {
+    width: 50%;
+}
+
+.activities-fill {
+    width: 40%;
+}
+
+/* Itinerary */
+
+.itinerary-section {
+    background: #f4f6f2;
+    padding: 30px;
+    border-radius: 24px;
+    margin: 30px 0;
+}
+
+.itinerary-section h3 {
+    margin-top: 0;
+}
+
+.itinerary-section p {
+    color: #758078;
+    line-height: 1.7;
+}
+
+.itinerary-day {
+    background: white;
+    padding: 22px;
+    margin: 15px 0;
+    border-radius: 16px;
+    border-left: 4px solid #78947e;
+}
+
+/* Checklist */
+
+.checklist-section {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    margin-top: 30px;
+}
+
+.checklist {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.checklist label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    background: #f5f7f3;
+    border-radius: 12px;
+    color: #526257;
+    cursor: pointer;
+}
+
+/* Progress bar */
+
+.progress-bar {
+    height: 10px;
+    background: #e5ebe5;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#progressFill {
+    height: 100%;
+    width: 0%;
+    background: #426c54;
+    border-radius: 20px;
+    transition: width 0.4s ease;
+}
+
+/* Budget planner */
+
+.budget-planner {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 24px;
+    margin: 30px 0;
+    border: 1px solid #edf0eb;
+}
+
+.budget-input {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.budget-input label {
+    color: #526257;
+    font-weight: 600;
+}
+
+.budget-input input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px;
+    border: 1px solid #dce4dc;
+    border-radius: 12px;
+    margin-top: 8px;
+    background: #f8faf7;
+}
+
+/* Rating */
+
+.rating-section {
+    background: #f4f6f2;
+    padding: 30px;
+    border-radius: 24px;
+    margin: 30px 0;
+    text-align: center;
+}
+
+.rating-stars button {
+    background: transparent;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.rating-stars button:hover {
+    transform: scale(1.3);
+}
+
+/* General buttons */
+
+.destination-info button:not(.favorite-btn),
+.destination-info select,
+.destination-info .back-button {
+    border-radius: 12px;
+}
+
+.destination-info button:not(.favorite-btn) {
+    background: #214d3c;
+    color: white;
+    border: none;
+    padding: 14px 22px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.destination-info button:not(.favorite-btn):hover {
+    background: #376b50;
+    transform: translateY(-2px);
+}
+
+/* Back button */
+
+.back-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 24px;
+    background: #f0f4ef;
+    color: #214d3c;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.back-button:hover {
+    background: #214d3c;
+    color: white;
+}
+
+/* Mobile responsiveness */
+
+@media (max-width: 900px) {
+
+    .destination-layout {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .destination-info {
+        padding: 35px 25px;
+    }
+
+    .destination-info h1 {
+        font-size: 48px;
+    }
+
+    .destination-image {
+        min-height: 450px;
+    }
+
+    .destination-image img {
+        min-height: 450px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    #destinationPage {
+        padding: 25px 15px;
+    }
+
+    .destination-layout {
+        padding: 12px;
+        gap: 20px;
+        border-radius: 22px;
+    }
+
+    .destination-info {
+        padding: 30px 20px;
+    }
+
+    .destination-info h1 {
+        font-size: 40px;
+    }
+
+    .checklist {
+        grid-template-columns: 1fr;
+    }
+
+    .budget-input {
+        grid-template-columns: 1fr;
+    }
+
+    .destination-image,
+    .destination-image img {
+        min-height: 350px;
+    }
+
+}
+
+/* Fix travel budget readability */
+
+.budget-card h2 {
+    color: #214d3c !important;
+    font-size: 32px;
+    line-height: 1.4;
+}
+
+.budget-card p {
+    color: #68766c !important;
+}
+
+/* Weather card colour improvement */
+
+.weather-card {
+    background: linear-gradient(135deg, #214d3c, #356b50);
+    color: #ffffff;
+}
+
+.weather-card h2 {
+    color: #ffffff !important;
+    font-size: 58px;
+    font-weight: 800;
+}
+
+.weather-card p {
+    color: #f1f5f0 !important;
+}
+
+.weather-details {
+    background: rgba(255, 255, 255, 0.12);
+    padding: 20px;
+    border-radius: 18px;
+}
+
+.weather-details p {
+    color: #ffffff !important;
+    font-size: 17px;
+}
+
+.weather-icon {
+    font-size: 65px;
+}
+
+.weather-update {
+    color: #dce9df !important;
+}
+
+/* TRIP COUNTDOWN */
+
+.countdown-card {
+    background: linear-gradient(135deg, #f4f7f2, #e6eee7);
+    padding: 35px;
+    border-radius: 25px;
+    margin: 35px 0;
+    border: 1px solid #dce7dd;
+    box-shadow: 0 10px 30px rgba(32, 77, 58, 0.08);
+}
+
+.countdown-card h3 {
+    color: #214f3c;
+    font-size: 26px;
+    margin-bottom: 12px;
+}
+
+.countdown-card > p {
+    color: #718078;
+    font-size: 16px;
+    margin-bottom: 22px;
+}
+
+.countdown-card input[type="date"] {
+    padding: 15px;
+    border: 1px solid #cbd9ce;
+    border-radius: 12px;
+    background: white;
+    color: #214f3c;
+    font-size: 15px;
+    outline: none;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
+.countdown-card input[type="date"]:focus {
+    border-color: #315f49;
+    box-shadow: 0 0 0 3px rgba(49, 95, 73, 0.12);
+}
+
+.countdown-card button {
+    background: #214f3c;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 12px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.countdown-card button:hover {
+    background: #376d52;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(33, 79, 60, 0.2);
+}
+
+#countdownResult {
+    margin-top: 25px;
+}
+
+.countdown-result {
+    background: #214f3c;
+    color: white;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.countdown-result h2 {
+    font-size: 65px;
+    margin: 0;
+    color: #f4e7c8;
+}
+
+.countdown-result p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.countdown-result span {
+    color: #d7e8dc;
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+
+    .countdown-card {
+        padding: 25px 20px;
+    }
+
+    .countdown-card h3 {
+        font-size: 22px;
+    }
+
+    .countdown-card input[type="date"] {
+        width: 100%;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+    }
+
+    .countdown-card button {
+        width: 100%;
+    }
+
+    .countdown-result h2 {
+        font-size: 50px;
+    }
+
+}

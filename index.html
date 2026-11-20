@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BEYOND THE FRAMES </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Home section -->
+    <div class="home" id="home">
+
+        <div class="home-content">
+
+        <h1>
+                Start Your Next<br>
+                Great Adventure.
+            </h1>
+
+        <p>
+            Discover beautiful destinations, explore hidden places
+                and create unforgettable travel experiences.
+
+        </p>
+
+        <a href="#explore" class="button">Explore Now</a>
+
+    </div>
+
+    <!-- Navigation bar -->
+    <div class="navbar">
+
+        <h2>BEYOND THE FRAMES.</h2>
+
+        <div class="links">
+    <a href="#home">Home</a>
+    <a href="#india">Explore India</a>
+    <a href="#countries">Explore Countries</a>
+    <a href="#hidden">Hidden Gems</a>
+    <a href="#quiz">Find Your Match</a>
+    <a href="favourites.html">Favorites</a>
+</div>
+
+    </div>
+    </div>
+
+
+   
+    <!-- Introduction -->
+    <div class="intro">
+
+     <div class="intro-content">
+
+        <p class="intro-label">THE WORLD IS WAITING</p>
+
+        <h2>Where will your next journey take you?</h2>
+
+        <div class="intro-divider">
+            <span></span>
+            <b>✦</b>
+            <span></span>
+        </div>
+
+        <p class="intro-description">
+            Explore different destinations and find
+            the perfect place for your next adventure.
+        </p>
+
+    </div>
+
+</div>   
+
+<!-- Explore India -->
+<div class="explore" id="india">
+
+    <h2>Explore India</h2>
+
+    <p>Discover beautiful destinations across India</p>
+
+    <input type="text" id="indiaSearch"
+    placeholder="Search Indian destinations">
+
+    <div class="places" id="indiaPlaces"></div>
+
+</div>
+
+
+<!-- Explore Countries -->
+<div class="explore" id="countries">
+
+    <h2>Explore the World</h2>
+
+    <p>Discover destinations around the world</p>
+
+    <input type="text" id="countrySearch"
+    placeholder="Search countries or destinations">
+
+    <div class="places" id="worldPlaces"></div>
+
+</div>
+
+<!-- Interactive Travel Map -->
+
+<section class="map-section" id="travel-map">
+
+    <h2>Explore Destinations Around the World 🌍</h2>
+
+    <p>Discover your next adventure on our interactive map!</p>
+
+    <div id="travelMap"></div>
+
+</section>
+    
+
+    <!-- Hidden gems -->
+    <div class="hidden" id="hidden">
+
+        <h2>Discover Hidden Gems</h2>
+        <input type="text" id="hiddenSearch"
+        placeholder="Search for hidden gems">
+        
+        <button onclick="clearSearch()">Clear Search</button>
+
+        <p>
+            Explore beautiful places that are
+            not commonly known by tourists.
+        </p>
+    <div class="places" id="hiddenPlaces"></div> 
+    </div>
+
+
+    <!-- Travel quiz -->
+    <div class="quiz" id="quiz">
+
+        <h2>Find Your Perfect Destination</h2>
+
+        <p>What kind of place would you like to visit?</p>
+
+        <select id="placeType">
+
+            <option value="">Select a place</option>
+            <option value="Mountains">Mountains</option>
+            <option value="Beaches">Beaches</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Culture">Historical Places</option>
+
+        </select>
+
+        <button onclick="findPlace()">Find My Match</button>
+        <button onclick="clearQuiz()">Clear</button>
+        <div id="quizResults" class="quiz-results"></div>
+
+    </div>
+
+
+    <!-- Footer -->
+    <div class="footer">
+
+        <h2>BEYOND THE FRAMES.</h2>
+
+        <p>Discover. Explore. Create Memories.</p>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+    <a href="#home">Back to Top </a> 
+
+
+</body>
+</html>

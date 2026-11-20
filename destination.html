@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BEYOND THE FRAMES - Destination</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <div class="navbar">
+        <h2>BEYOND THE FRAMES.</h2>
+
+        <div class="links">
+            <a href="index.html">Home</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+    <div id="destinationPage">
+<script>
+
+   let params = new URLSearchParams(window.location.search);
+
+let name = params.get("name");
+
+let allDestinations = destinations.concat(hiddenGems);
+
+let destination = allDestinations.find(place =>
+    place.name.toLowerCase().trim() === name.toLowerCase().trim()
+);
+
+document.getElementById("destinationPage").innerHTML =`
+    <div class="destination-layout">
+
+        <div class="destination-info">
+            <button class="favorite-btn" onclick="toggleFavorite('${destination.name}')">
+    ${JSON.parse(localStorage.getItem("beyondtheframesFavorites") || "[]").includes(destination.name) ? "♥" : "♡"}
+</button>
+
+
+            <p class="tag"> / FEATURED DESTINATION </p>
+
+            <h1>${destination.name.charAt(0).toUpperCase() + destination.name.slice(1)}</h1>
+
+            <p class="subtitle">${destination.description}</p>
+
+            <p class="about">${destination.about}</p>
+
+            <hr>
+
+            <h3>Trip Details</h3>
+
+            <div class="detail">
+                <span>📍 Famous Attractions</span>
+                <span>${destination.attractions}</span>
+            </div>
+
+            <div class="detail">
+                <span>📅 Best Time to Visit</span>
+                <span>${destination.bestTime}</span>
+            </div>
+
+            <div class="weather-card" id="weatherCard">
+
+    <h3>🌤️ CURRENT WEATHER</h3>
+
+    <div id="weatherInfo">
+        Loading weather...
+    </div>
+
+</div>
+
+            <div class="budget-card">
+
+    <div class="budget-heading">
+        <span>💰 TRAVEL BUDGET</span>
+    </div>
+
+    <h2>${destination.budget || "Budget information coming soon"}</h2>
+
+    <p>Estimated expenses per person</p>
+
+</div>
+<div class="budget-breakdown">
+
+    <h3>Budget Breakdown</h3>
+
+    <div class="budget-item">
+        <div class="budget-label">
+            <span>🍽️ Food</span>
+            <span>${destination.food || "Not available"}</span>
+        </div>
+        <div class="budget-bar">
+            <div class="budget-fill food-fill"></div>
+        </div>
+    </div>
+
+    <div class="budget-item">
+        <div class="budget-label">
+            <span>🚗 Transport</span>
+            <span>${destination.transport || "Not available"}</span>
+        </div>
+        <div class="budget-bar">
+            <div class="budget-fill transport-fill"></div>
+        </div>
+    </div>
+
+    <div class="budget-item">
+        <div class="budget-label">
+            <span>🎟️ Activities</span>
+            <span>${destination.activities || "Not available"}</span>
+        </div>
+        <div class="budget-bar">
+            <div class="budget-fill activities-fill"></div>
+        </div>
+    </div>
+
+</div>
+
+<div class="countdown-card">
+
+    <h3>✈️ Your Trip Countdown</h3>
+
+    <p>When are you planning to visit?</p>
+
+    <input type="date" id="tripDate">
+
+    <button onclick="startCountdown('${destination.name}')">
+        Start Countdown
+    </button>
+
+    <div id="countdownResult"></div>
+
+</div>
+
+<div class="itinerary-section">
+
+    <h3>✈️ Plan Your Trip</h3>
+
+    <p>Create your personalized travel itinerary</p>
+
+    <label for="itineraryDays">How many days?</label>
+
+    <select id="itineraryDays">
+        <option value="1">1 Day</option>
+        <option value="2">2 Days</option>
+        <option value="3">3 Days</option>
+        <option value="4">4 Days</option>
+        <option value="5">5 Days</option>
+    </select>
+
+    <button onclick="generateItinerary('${destination.name}')">
+        Generate Itinerary
+    </button>
+
+    <div id="itineraryResult"></div>
+
+    <div class="checklist-section">
+
+    <h3>🧳 Travel Checklist</h3>
+
+    <p id="checklistProgress">0 of 6 items completed</p>
+
+    <div class="progress-bar">
+        <div id="progressFill"></div>
+    </div>
+
+    <div class="checklist">
+
+        <label>
+            <input type="checkbox" onchange="updateChecklist()">
+            Pack clothes
+        </label>
+
+        <label>
+            <input type="checkbox" onchange="updateChecklist()">
+            Pack toiletries
+        </label>
+
+        <label>
+            <input type="checkbox" onchange="updateChecklist()">
+            Carry chargers
+        </label>
+
+        <label>
+            <input type="checkbox" onchange="updateChecklist()">
+            Pack medicines
+        </label>
+
+        <label>
+            <input type="checkbox" onchange="updateChecklist()">
+            Carry ID documents
+        </label>
+
+        <label>
+            <input type="checkbox" onchange="updateChecklist()">
+            Check weather forecast
+        </label>
+
+    </div>
+
+</div>
+
+</div>
+
+<div class="budget-planner">
+
+    <h3>💰 Trip Budget Planner</h3>
+
+    <p>Plan your expenses and stay within your budget!</p>
+
+    <div class="budget-input">
+
+        <label>My Total Budget (₹)</label>
+        <input type="number" id="totalBudget" placeholder="Enter your budget">
+
+        <label>Accommodation (₹)</label>
+        <input type="number" id="stayCost" placeholder="Enter amount">
+
+        <label>Food (₹)</label>
+        <input type="number" id="foodCost" placeholder="Enter amount">
+
+        <label>Transportation (₹)</label>
+        <input type="number" id="transportCost" placeholder="Enter amount">
+
+        <label>Activities & Shopping (₹)</label>
+        <input type="number" id="activityCost" placeholder="Enter amount">
+
+    </div>
+
+    <button onclick="calculateBudget()">Calculate Budget</button>
+
+    <div id="budgetResult"></div>
+
+</div>
+
+<div class="rating-section">
+
+    <h3>⭐ Rate This Destination</h3>
+
+    <p>How would you rate this destination?</p>
+
+    <div class="rating-stars">
+
+        <button onclick="rateDestination('${destination.name}', 1)">⭐</button>
+        <button onclick="rateDestination('${destination.name}', 2)">⭐</button>
+        <button onclick="rateDestination('${destination.name}', 3)">⭐</button>
+        <button onclick="rateDestination('${destination.name}', 4)">⭐</button>
+        <button onclick="rateDestination('${destination.name}', 5)">⭐</button>
+
+    </div>
+
+    <p id="ratingMessage"></p>
+
+</div>
+
+
+            <a href="index.html#explore" class="back-button">
+                Back to Destinations
+            </a>
+
+        </div>
+
+    
+
+        <div class="destination-image">
+            <img src="${destination.image}" alt="${destination.name}">
+        </div>
+
+    </div>
+
+`;
+
+loadWeather(destination.name);
+</script>
+
+    </div>
+
+</body>
+</html>
